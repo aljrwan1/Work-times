@@ -5,8 +5,15 @@
   --border: #d1d1d6;
   --text: #1d1d1f;
   --text-muted: #6e6e73;
-  --accent: #0071e3;
-  --accent-hover: #0077ed;
+  /* UAE-inspired colors */
+  --uae-red: #ce1126;
+  --uae-green: #00732f;
+  --uae-black: #000000;
+  --uae-gold: #c5a028;
+  --accent: #00732f;
+  --accent-hover: #008f3a;
+  --accent-secondary: #ce1126;
+  --accent-secondary-hover: #e01a2e;
   --success: #34c759;
   --success-bg: rgba(52, 199, 89, 0.12);
   --warning: #ff9f0a;
@@ -88,10 +95,22 @@ body {
   flex-direction: row-reverse;
 }
 
+/* UAE logo */
+.uae-logo {
+  display: block;
+  margin: 0 auto 1rem;
+  border-radius: var(--radius-sm);
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.08);
+}
+
 /* Header */
 .header {
   text-align: center;
   margin-bottom: 2rem;
+  border-bottom: 3px solid var(--uae-red);
+  background: linear-gradient(to bottom, rgba(0, 115, 47, 0.04), transparent);
+  border-radius: var(--radius);
+  padding: 1.5rem 1rem 2rem;
 }
 
 .header h1 {
@@ -99,6 +118,7 @@ body {
   font-size: 1.75rem;
   font-weight: 700;
   letter-spacing: -0.02em;
+  color: var(--uae-green);
 }
 
 .subtitle {
@@ -111,7 +131,7 @@ body {
   margin-top: 1rem;
   font-size: 1.5rem;
   font-weight: 600;
-  color: var(--text-muted);
+  color: var(--uae-green);
   font-variant-numeric: tabular-nums;
 }
 
@@ -122,15 +142,33 @@ body {
   border-radius: var(--radius);
   padding: 1.5rem;
   margin-bottom: 1.25rem;
+  border-inline-start: 4px solid var(--uae-green);
+}
+
+.card.today-card {
+  border-inline-start-color: var(--uae-gold);
+  background: linear-gradient(135deg, #fff 0%, rgba(197, 160, 40, 0.04) 100%);
+}
+
+.card.history-card {
+  border-inline-start-color: var(--uae-red);
 }
 
 .card h2 {
   margin: 0 0 1rem;
   font-size: 0.9rem;
   font-weight: 600;
-  color: var(--text-muted);
+  color: var(--uae-green);
   text-transform: uppercase;
   letter-spacing: 0.04em;
+}
+
+.card.today-card h2 {
+  color: var(--uae-gold);
+}
+
+.card.history-card h2 {
+  color: var(--uae-red);
 }
 
 /* Punch card */
@@ -254,8 +292,13 @@ body {
   border: 1px solid var(--border);
 }
 
+.btn-clock-out {
+  border-inline-start: 3px solid var(--uae-red);
+}
+
 .btn-clock-out:hover:not(:disabled) {
   background: var(--border);
+  border-inline-start-color: var(--uae-red);
 }
 
 /* Today card */
@@ -294,9 +337,13 @@ body {
 
 .history-table th {
   font-weight: 600;
-  color: var(--text-muted);
-  background: var(--bg);
+  color: #fff;
+  background: linear-gradient(135deg, var(--uae-green), #005a26);
   white-space: nowrap;
+}
+
+.history-table tbody tr:nth-child(even):not(.empty-row) {
+  background: rgba(0, 115, 47, 0.04);
 }
 
 .history-table tbody tr:last-child td {
@@ -319,6 +366,10 @@ body {
   margin-top: auto;
   padding-top: 2rem;
   text-align: center;
+}
+
+.footer {
+  border-top: 2px solid var(--uae-green);
 }
 
 .footer p {

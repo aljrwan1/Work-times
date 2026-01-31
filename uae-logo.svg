@@ -1,0 +1,7 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 80 56" width="80" height="56" aria-hidden="true">
+  <!-- UAE flag: red vertical bar (hoist) + green, white, black horizontal stripes -->
+  <rect width="20" height="56" fill="#ce1126"/>
+  <rect x="20" y="0" width="60" height="18.67" fill="#00732f"/>
+  <rect x="20" y="18.67" width="60" height="18.67" fill="#fff"/>
+  <rect x="20" y="37.34" width="60" height="18.66" fill="#000"/>
+</svg>
