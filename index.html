@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title id="titleEl">Employee Work Times</title>
+  <link rel="stylesheet" href="styles.css">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:ital,opsz,wght@0,9..40,400;0,9..40,500;0,9..40,600;0,9..40,700&display=swap" rel="stylesheet">
+</head>
+<body>
+  <div class="app">
+    <header class="header">
+      <div class="lang-switcher">
+        <button type="button" class="lang-btn active" data-lang="en" aria-pressed="true">English</button>
+        <button type="button" class="lang-btn" data-lang="ar" aria-pressed="false">العربية</button>
+      </div>
+      <h1 id="h1Title">Work Times</h1>
+      <p class="subtitle" id="subtitle">Track your hours</p>
+      <div class="live-clock" id="liveClock">--:--:--</div>
+    </header>
+
+    <main class="main">
+      <section class="card punch-card">
+        <h2 id="punchTitle">Time punch</h2>
+        <div class="employee-row">
+          <label for="employeeSelect" id="labelEmployee">Employee</label>
+          <div class="employee-input-wrap">
+            <select id="employeeSelect" aria-label="Select employee">
+              <option value="">Select or type name...</option>
+            </select>
+            <input type="text" id="employeeInput" placeholder="Or enter your name" autocomplete="off" />
+          </div>
+        </div>
+        <div class="status-badge" id="statusBadge">
+          <span class="status-dot"></span>
+          <span id="statusText">Not clocked in</span>
+        </div>
+        <div class="punch-buttons">
+          <button type="button" class="btn btn-clock-in" id="btnClockIn" disabled>Clock In</button>
+          <button type="button" class="btn btn-clock-out" id="btnClockOut" disabled>Clock Out</button>
+        </div>
+      </section>
+
+      <section class="card today-card">
+        <h2 id="todayTitle">Today</h2>
+        <div class="today-hours" id="todayHours">0h 0m</div>
+        <p class="today-date" id="todayDate"></p>
+      </section>
+
+      <section class="card history-card">
+        <h2 id="recentTitle">Recent entries</h2>
+        <div class="history-table-wrap">
+          <table class="history-table" id="historyTable">
+            <thead>
+              <tr>
+                <th id="thEmployee">Employee</th>
+                <th id="thDate">Date</th>
+                <th id="thClockIn">Clock In</th>
+                <th id="thClockOut">Clock Out</th>
+                <th id="thHours">Hours</th>
+              </tr>
+            </thead>
+            <tbody id="historyBody">
+              <tr class="empty-row">
+                <td colspan="5" id="emptyHistory">No entries yet. Clock in to get started.</td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+      </section>
+    </main>
+
+    <footer class="footer">
+      <p id="footerText">Data is stored locally in your browser.</p>
+    </footer>
+  </div>
+
+  <script src="app.js"></script>
+</body>
+</html>
